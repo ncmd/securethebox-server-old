@@ -1,0 +1,23 @@
+{
+  "name": "securethebox-server",
+  "version": "1.0.0",
+  "description": "Backend for securethebox app",
+  "scripts": {
+    "pip-f": "venv/bin/pip3 freeze > requirements.txt",
+    "push-m": "git checkout master && git cz && export CURRENTBRANCH=$(git branch | grep \\* | cut -d ' ' -f2) && git push",
+    "push-b": "git cz && export CURRENTBRANCH=$(git branch | grep \\* | cut -d ' ' -f2) && git push --set-upstream origin $CURRENTBRANCH && cross-var \"open https://github.com/ncmd/securethebox-server/compare/master...ncmd:$npm_package_config_b?expand=1\"",
+    "sync-l": "git checkout master ; git pull",
+    "sync-m": "git remote add upstream https://github.com/ncmd/securethebox-server.git ; git fetch upstream ; git checkout master ; git merge upstream/master "
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "b": "$CURRENTBRANCH"
+  }
+}
