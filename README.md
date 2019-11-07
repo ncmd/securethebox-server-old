@@ -62,6 +62,7 @@ Google Kubernetes Engine
 - This is the kubernetes cluster provider
 
 ## Project File Structure
+```
 securethebox-server
 |
 ├── config/ (contain all api keys/credentials, not published because of .gitignore file)
@@ -115,3 +116,4 @@ securethebox-server
 ├── README.md (Readme)
 │
 └── requirements.txt (python libraries)
+```
